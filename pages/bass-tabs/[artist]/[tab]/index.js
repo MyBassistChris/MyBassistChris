@@ -1,0 +1,55 @@
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import fetch from 'isomorphic-unfetch'
+import SongTable from '../../../../components/SongTable/SongTable'
+import PDFTab from '../../../../components/PDFTab/PDFTab'
+import HTMLTab from '../../../../components/HTMLTab/HTMLTab'
+
+const Tab = ({song, artistUrl, filePath}) => {
+    let tabFile;
+    if (filePath.includes('.pdf')) {
+        tabFile = <PDFTab filePath = {filePath} />
+    }
+    else if (filePath.includes('.html')) {
+        tabFile = <HTMLTab filePath = {filePath}/>
+    }
+    else {
+        return (
+            <h1 className='tc'>Tab Not Found</h1>
+        )
+    }
+
+    return (
+        <Container fluid>
+            <br /><br />
+             <SongTable 
+                song = {song}
+                artistUrl = {artistUrl}
+            />
+            { tabFile }
+        </Container>
+
+    )
+}
+
+Tab.getInitialProps = async ({ query }) => {
+    var song = query.tab
+    var artistUrl = query.artist
+    //Get artist name based on URL
+    try {
+        const artistQuery = await fetch('http://localhost:3000/api/artist?artist=' + artistUrl)
+        const artistResult = await artistQuery.json()
+        var artistName = artistResult.artist
+        var urlParams = '?artistName=' + artistName.replace('&','%26') + '&songUrl=' + song
+        //Get song info based on artistName & song Url
+        const songQuery = await fetch(`http://localhost:3000/api/tab${urlParams}`)
+        const songResult = await songQuery.json()
+        var filePath = "artists/" + artistUrl + "/" + song + songResult.tabType
+        return {song: songResult, artistUrl: artistUrl, filePath: filePath}
+    }
+    catch(e) {
+        return {song: [], filePath: 'none'}
+    }
+}
+
+export default Tab;

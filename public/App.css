@@ -1,0 +1,267 @@
+/*Import Font & Social Media images*/
+@import url('//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'Druk Wide Bold', 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  color: #137752;
+}
+
+a:hover {
+  color: #179b53;
+}
+
+h1 {
+  font-size: 300%;
+  margin: .4em 0;
+}
+
+/* Custom Classes */ 
+
+.banner {
+  max-width: 100%;
+}
+
+.footer {
+  background-color: rgba(55, 55, 55, .9);
+  bottom: 0;
+  padding: 10px;
+  height: 60px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.gear-container {
+  padding: 0px 20px !important;
+}
+
+.gearimg {
+  height: 300px;
+  object-fit: contain;
+}
+
+.gray-text {
+  color: rgba(55, 55, 55, .9);
+}
+
+.home-card {
+  height: 100%;
+  width: 100%;
+  border-width: 5px;
+  border-style: solid;
+  box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+}
+
+.home-card:hover {
+  background-color: rgba(150, 150, 150, 0.5);
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.navTransparent {
+  background-color: none;
+}
+
+.schedule-item {
+  background-color: inherit;
+}
+
+.tab {
+  display: inline-block;
+  overflow:auto;
+  white-space:nowrap;
+  font-size:small;
+  line-height:normal;
+  font-family: "courier new", monospace;
+}
+
+.tab-container {
+  margin-left: 20px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 350px;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.hover-square {
+  justify-content: center;
+  border-color: #179b53;
+  border-style: solid;
+  border-width: 2px;
+  outline-offset: 5px;
+  margin: auto;
+}
+
+/* Bootstrap */
+
+.card-body {
+  display: inline-block;
+}
+
+.card-header {
+  font-size: 26px;
+}
+
+.container {
+  margin: 50px auto;
+}
+
+.list-group {
+  height: inherit;
+}
+
+.list-group-item {
+  background-color: inherit;
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: inline;
+  margin-right: 40px;
+}
+
+.navbar-brand {
+  background-color: transparent;
+  margin: 5px 0px 5px 20px;
+  padding: 0px !important;
+  width: 110px;
+}
+
+.topnav {
+  background-color: rgba(55, 55, 55, .9); /* #373737 */
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav .btn {
+  color: #f2f2f2;
+  font-size: 14px;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  opacity: 0.7;
+  transition-duration: .6s;
+}
+
+/* Social Media */
+
+.fa {
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  align-content: center;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 2px;
+  border-radius: 50%;
+  color: #373737;
+  background: white;
+}
+
+.fa:hover {
+  transform: scale(1.3);
+  transition-duration: .6s;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 200%;
+    margin: .8em 0;
+  }
+
+  #aboutimg {
+    height: 300px;
+  }
+
+  .col-md-6 {
+    margin-bottom: 30px;
+  }
+
+  .gearimg {
+    max-height: 200px;
+  }
+
+  .home-section {
+    margin: 30px auto;
+  }
+
+  .navbar-brand {
+    padding: 0px !important;
+    margin: 3px 0px;
+    width: 80px;
+  }
+
+  .row {
+    margin-bottom: 0px;
+  }
+
+  .topnav .btn {
+    font-size: 12px;
+    padding: 14px 6px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #video {
+    position: static;
+  }
+}
+
+
+
+
+
+.panels {
+    background: linear-gradient(-45deg, #A7A7A7, #A0A0A0);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
