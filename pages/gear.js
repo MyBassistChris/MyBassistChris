@@ -2,8 +2,21 @@ import React from "react"
 import GearCard from "../components/Cards/GearCard"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import fetch from 'isomorphic-unfetch'
 
-const Gear = ({currentGear, otherGear}) => {
+const Gear = ({gearArray}) => {
+    var currentGear = []
+    var otherGear = []
+    
+    //Split gear into two arrays based on field Current
+    gearArray.forEach(function(gear) {
+        if (gear.current) {
+            currentGear.push(gear)
+        }
+        else {
+            otherGear.push(gear)
+        }
+    })
     return (
         <Container fluid className='gray-text tc bg-washed-green gear-container'>
             <br />
@@ -44,9 +57,7 @@ const Gear = ({currentGear, otherGear}) => {
 Gear.getInitialProps = async () => {
     const res = await fetch('http://localhost:3000/api/gear')
     const json = await res.json()
-    const res2 = await fetch('http://localhost:3000/api/otherGear')
-    const json2 = await res2.json()
-    return { currentGear: json, otherGear: json2}
+    return { gearArray: json}
 }
 
 export default Gear;

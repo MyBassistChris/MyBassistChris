@@ -6,7 +6,7 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-    let currentGear = await req.db.collection('gear').find({current: 1}).toArray();
+    let currentGear = await req.db.collection('gear').find({}).toArray();
     res.json(currentGear);
 });
 
