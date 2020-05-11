@@ -3,7 +3,6 @@ import React, { Fragment } from 'react'
 const Footer = () => {
     return (
     <Fragment>
-        <br /><br /><br />
         <footer className="footer sticky-footer">
             <a href="https://www.youtube.com/c/mybassistchris" target="_blank" rel="noopener noreferrer"  className="fa fa-youtube-play"></a>
             <a href="https://www.instagram.com/mybassistchris" target="_blank" rel="noopener noreferrer"  className="fa fa-instagram"></a>

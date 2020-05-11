@@ -15,7 +15,6 @@ const Top10Bass = ({ artists, songs}) => {
                 <ListGroup>
                     {
                         songs.map((song, i) => {
-                            console.log(song.artist)
                             var artistIndex = artistArray.indexOf(song.artist)
                             var artistUrl = artists[artistIndex].artistUrl
                             var songUrl = "bass-tabs/" + artistUrl + '/' + song.songUrl

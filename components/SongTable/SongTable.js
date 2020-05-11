@@ -4,12 +4,13 @@ import Col from 'react-bootstrap/Col'
 import Table from 'react-bootstrap/Table'
 import Video from '../Video/Video'
 
-const SongTable = ({ song, artistUrl }) => {
+//Called in index.js of [tab]
+const SongTable = ({ song, artistUrl, fileType }) => {
     var song2 = song;
-    const { songTitle, artist, tuning, videoUrl } = song;
+    const { songTitle, artist, tuning, videoUrl,  } = song;
     return (
         <Row>
-            <Col lg={6} md={10} >
+            <Col lg={{span: 6, offset: 0}} md={{span: 10, offset: 1}} >
                 <Table>
                     <tbody>
                         <tr>
@@ -27,8 +28,12 @@ const SongTable = ({ song, artistUrl }) => {
                     </tbody>
                 </Table>
             </Col>
-            <Col lg={6} md={10} >
-                <Video videoUrl={ videoUrl } />
+            <Col lg={{span: 6, offset: 0}} md={{span: 10, offset: 1}} >
+                <Video
+                    className='sticky-top'
+                    id='video'
+                    videoUrl={ videoUrl }
+                    fileType={ fileType } />
             </Col>
         </Row>
     )

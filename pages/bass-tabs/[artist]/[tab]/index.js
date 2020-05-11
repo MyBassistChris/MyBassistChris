@@ -7,10 +7,16 @@ import HTMLTab from '../../../../components/HTMLTab/HTMLTab'
 
 const Tab = ({song, artistUrl, filePath}) => {
     let tabFile;
+    var fileType;
+    
+    //Check whether to load a PDF Tab or HTML Tab
     if (filePath.includes('.pdf')) {
+        fileType = 'PDF'
         tabFile = <PDFTab filePath = {filePath} />
     }
     else if (filePath.includes('.html')) {
+        fileType = 'HTML'
+        tabFile='yellow'
         tabFile = <HTMLTab filePath = {filePath}/>
     }
     else {
@@ -25,6 +31,7 @@ const Tab = ({song, artistUrl, filePath}) => {
              <SongTable 
                 song = {song}
                 artistUrl = {artistUrl}
+                fileType = {fileType}
             />
             { tabFile }
         </Container>

@@ -7,7 +7,7 @@ import fetch from 'isomorphic-unfetch'
 const Gear = ({gearArray}) => {
     var currentGear = []
     var otherGear = []
-    
+
     //Split gear into two arrays based on field Current
     gearArray.forEach(function(gear) {
         if (gear.current) {

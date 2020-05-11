@@ -30,6 +30,7 @@ class PDFTab extends Component {
                         <Document
                             file={'../../' + filePath}
                             onLoadSuccess={this.onDocumentLoadSuccess}
+                            className='center'
                         >
                             {
                                 Array.from(

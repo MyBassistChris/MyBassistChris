@@ -2,8 +2,8 @@ import React, {Fragment} from 'react'
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 import FacebookPlayer from 'react-facebook-player';
 
-//https://www.facebook.com/watch/?v=1015839508460427
-const Video = ({ videoUrl }) => {
+//Called by SongTable
+const Video = ({ videoUrl, fileType }) => {
     if(videoUrl.toString().includes('FB')) {
         return (
              <FacebookPlayer videoId={ videoUrl.slice(3)} />
@@ -15,10 +15,25 @@ const Video = ({ videoUrl }) => {
         )
     }
     else {
+        //Return Video in static position for PDF, dynamic position if HTML
+        if (fileType == 'PDF') {
+            return (
+                <ResponsiveEmbed aspectRatio="16by9">
+                    <embed src={ 'https://www.youtube.com/embed/' + videoUrl }
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen="" />
+                </ResponsiveEmbed>
+            )
+        }
         return (
-            <ResponsiveEmbed aspectRatio="16by9" id='video'>
-                <embed src={ 'https://www.youtube.com/embed/' + videoUrl } allow="autoplay; encrypted-media" allowFullScreen="" />
-            </ResponsiveEmbed>
+            <iframe 
+                id='video'
+                width="425" height="260"
+                src={ 'https://www.youtube.com/embed/' + videoUrl }
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>    
+            </iframe>
         )
     }
 }

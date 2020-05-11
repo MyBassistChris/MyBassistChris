@@ -7,7 +7,7 @@ body {
   /*font-family: 'Open Sans', sans-serif;*/
   display: flex;
   flex-direction: column;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 html {
@@ -39,13 +39,12 @@ h1 {
   bottom: 0;
   padding: 10px;
   height: 60px;
-  position: absolute;
   text-align: center;
   width: 100%;
 }
 
 .gear-container {
-  padding: 0px 20px !important;
+  padding: 0px 20px 50px !important;
 }
 
 .gearimg {
@@ -66,9 +65,17 @@ h1 {
 }
 
 .home-card:hover {
-  background-color: rgba(150, 150, 150, 0.5);
+  background-color: rgba(150, 150, 150, 1);
   color: white;
   transition-duration: 0.4s;
+}
+
+.home-container {
+  padding: 50px 0px;
+}
+
+.home-row {
+  margin-bottom: 50px;
 }
 
 .navTransparent {
@@ -77,6 +84,11 @@ h1 {
 
 .schedule-item {
   background-color: inherit;
+}
+
+#video {
+  position: fixed;
+  right: 0;
 }
 
 .tab {
@@ -120,8 +132,11 @@ h1 {
   font-size: 26px;
 }
 
-.container {
-  margin: 50px auto;
+.jumbotron {
+  margin-bottom: 0px;
+  padding: 0px;
+  background-image: url("banner.jpg");
+  background-origin: padding-box;
 }
 
 .list-group {
@@ -166,9 +181,8 @@ h1 {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: rgba(221, 221, 221, .7); /* #ddd */
   color: black;
-  opacity: 0.7;
   transition-duration: .6s;
 }
 
@@ -231,37 +245,26 @@ h1 {
   .row {
     margin-bottom: 0px;
   }
+}
 
+@media (max-width: 775px) {
   .topnav .btn {
     font-size: 12px;
-    padding: 14px 6px;
+    padding: 14px 8px;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
+
+  .home-row {
+    margin-bottom: 0px;
+  }
+
+  .home-card {
+    margin-bottom: 50px;
+  }
+
   #video {
     position: static;
   }
-}
-
-
-
-
-
-.panels {
-    background: linear-gradient(-45deg, #A7A7A7, #A0A0A0);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
