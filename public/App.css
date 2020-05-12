@@ -16,10 +16,6 @@ html {
 }
 
 a {
-  color: #137752;
-}
-
-a:hover {
   color: #179b53;
 }
 
@@ -69,6 +65,9 @@ h1 {
   background-color: rgba(150, 150, 150, 1);
   color: white;
   transition-duration: 0.4s;
+}
+.home-card:hover a {
+  color: #49ca83;
 }
 
 .home-container {
