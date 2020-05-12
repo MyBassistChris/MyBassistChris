@@ -9,7 +9,7 @@ const InstagramCard = () => {
                 <Card.Body className="tc">
                     <Card.Header>INSTAGRAM FEED</Card.Header>
                     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                    <div class="elfsight-app-737b39e8-9a2d-437a-91fb-e54a5bc622c4"></div>
+                    <div className="elfsight-app-737b39e8-9a2d-437a-91fb-e54a5bc622c4"></div>
                 </Card.Body>
             </Card>
         </Col>

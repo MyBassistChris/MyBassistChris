@@ -1,5 +1,5 @@
 /*Import Font & Social Media images*/
-@import url('https://db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold');
+@import url('//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
@@ -36,9 +36,10 @@ h1 {
 
 .footer {
   background-color: rgba(55, 55, 55, .9);
-  bottom: 0;
+  bottom: -50px;
   padding: 10px;
   height: 60px;
+  position: absolute;
   text-align: center;
   width: 100%;
 }
