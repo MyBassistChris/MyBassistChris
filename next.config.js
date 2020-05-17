@@ -10,8 +10,4 @@ module.exports = {
       },
     ],
   },
-  target: 'serverless', // <- add here
-  webpack: (config, options) => {
-    return config
-  }
 }

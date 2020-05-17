@@ -54,10 +54,11 @@ const Gear = ({gearArray}) => {
     )
 }
 
-Gear.getInitialProps = async () => {
+//Gear.getInitialProps = async () => {
+export async function getServerSideProps() {
     const res = await fetch('http://localhost:3000/api/gear')
     const json = await res.json()
-    return { gearArray: json}
+    return { props: { gearArray: json } }
 }
 
 export default Gear;
