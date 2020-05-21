@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import ListGroup from 'react-bootstrap/ListGroup'
 import fetch from 'isomorphic-unfetch'
 
-class BassTabs extends Component {
+interface bassState {
+    artists: any[]
+    searchField: string
+}
+
+class BassTabs extends Component<{}, bassState> {
     constructor(props) {
         super(props)
         this.state = {
@@ -23,32 +25,31 @@ class BassTabs extends Component {
             return artist.artist.toLowerCase().includes(searchField.toLowerCase());
         })
         return (
-            <Row>
-                <Col xs={{span: 10, offset: 1}} >
+            <div className="ui grid centered bg-near-white">
+                <div className="fourteen wide column">
                     <h1>ARTISTS</h1>
-                    <ListGroup>
-                        <input 
-                            className="form-control"
-                            type="text"
-                            placeholder="Search..."
-                            onChange= {this.onSearchChange}
-                        />
-                        <br />
+                        <div className="ui input focus fluid">
+                            <input
+                                className="form-control"
+                                type="text"
+                                placeholder="Search..."
+                                onChange= {this.onSearchChange}
+                            />
+                        </div>
+                    <div className="ui fluid vertical menu aligned large">
                         {
                             filteredArtists.map((artist, i) => {
                                 return(
-                                    <ListGroup.Item 
-                                        key={i} 
-                                        action href={"bass-tabs/" + artist.artistUrl}>
-                                            {artist.artist}
-                                        </ListGroup.Item>
+                                    <a className="item" key={i} href={"bass-tabs/" + artist.artistUrl}>
+                                        {artist.artist}
+                                    </a>
                                 )
                             })
                         }
-                    </ListGroup>
+                    </div>
                     <br /><br />
-                </Col>
-            </Row>
+                </div>
+            </div>
         )
     }
 }

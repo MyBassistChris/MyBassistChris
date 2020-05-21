@@ -1,6 +1,4 @@
 import React from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import ListGroup from 'react-bootstrap/ListGroup'
 import fetch from 'isomorphic-unfetch'
 
@@ -9,28 +7,26 @@ const Top10Bass = ({ artists, songs}) => {
         return artist.artist
     })
     return (
-        <Row>
-            <Col xs={{span: 10, offset: 1}} >
-                <h1>TOP 10 BASS</h1>
-                <ListGroup>
+        <div className="ui grid centered bg-near-white">
+            <h1>TOP 10 BASS</h1>
+            <div className="fourteen wide column">
+                <div className="ui fluid vertical menu aligned large">
                     {
                         songs.map((song, i) => {
                             var artistIndex = artistArray.indexOf(song.artist)
                             var artistUrl = artists[artistIndex].artistUrl
                             var songUrl = "bass-tabs/" + artistUrl + '/' + song.songUrl
                             return(
-                                <ListGroup.Item 
-                                    key={i} 
-                                    action href={songUrl}>
-                                        {song.songTitle}
-                                </ListGroup.Item>
+                                <a className="item" key={i} href={songUrl}>
+                                    {song.songTitle}
+                                </a>
                             )
                         })
                     }
-                </ListGroup>
+                </div>
                 <br /><br />
-            </Col>
-        </Row>
+            </div>
+        </div>
     )
 }
 

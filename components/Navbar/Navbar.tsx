@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className="sticky-top navbar-expand-sm" id="navbarSupportedContent">
             <div className="topnav">
                 <span className="navbar-brand btn" href="/">
-                    <img src="/img/logo.png" width="50" height="50" alt="" />
+                    <img src="/img/logo2.png" width="150" height="53" alt="" />
                 </span>
                 <span className="nav fr">
                     <a className="btn b" href="/">HOME</a>

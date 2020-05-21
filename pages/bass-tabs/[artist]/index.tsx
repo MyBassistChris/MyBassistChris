@@ -1,7 +1,4 @@
 import React from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import ListGroup from 'react-bootstrap/ListGroup'
 import fetch from 'isomorphic-unfetch'
 
 const Artist = ({ artistName, artistUrl, songs }) => {
@@ -11,26 +8,24 @@ const Artist = ({ artistName, artistUrl, songs }) => {
         )
     }
     return (
-        <Row>
-            <Col xs={{span: 10, offset: 1}} >
+        <div className="ui grid centered bg-near-white">
+            <div className="fourteen wide column">
                 <h1> {artistName}</h1>
-                <ListGroup>
+                <div className="ui fluid vertical menu aligned large">
                     {
                         songs.map((song, i) => {
                             var songUrl = artistUrl + "/" + song.songUrl
                             return(
-                                <ListGroup.Item
-                                    key={i}
-                                    action href={songUrl} >
-                                        {song.songTitle}
-                                </ListGroup.Item>
+                                <a className="item" key={i} href={songUrl} >
+                                    {song.songTitle}
+                                </a>
                             )
                         })
                     }
-                </ListGroup>
+                </div>
                 <br /><br />
-            </Col>
-        </Row>
+            </div>
+        </div>
     )
 }
 
