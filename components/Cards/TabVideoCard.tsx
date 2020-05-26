@@ -7,7 +7,7 @@ interface tabState {
     width: number
     height: number
     position: string
-    positionText: any
+    positionText: string
     sizeText: string
 }
 
@@ -67,6 +67,7 @@ class TabVideoCard extends Component<{}, tabState>  {
                         src={ 'https://www.youtube.com/embed/' + videoUrl }
                         frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen  
                     />
                     <div className="ui buttons" style={{ display: "block" }}>
                         <button className="ui button" onClick={ this.changePosition }>
