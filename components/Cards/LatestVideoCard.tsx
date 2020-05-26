@@ -1,7 +1,7 @@
 import React from 'react'
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 
-const VideoCard = () => {
+const LatestVideoCard = () => {
     return (
         <div className="seven wide column">
             <div className="card home-card tc">
@@ -14,4 +14,4 @@ const VideoCard = () => {
     )
 }
 
-export default VideoCard;
+export default LatestVideoCard;

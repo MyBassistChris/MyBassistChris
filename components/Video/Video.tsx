@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react'
-import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 import FacebookPlayer from 'react-facebook-player';
 
 //Called by SongTable
@@ -16,24 +15,21 @@ const Video = ({ videoUrl, fileType }) => {
     }
     else {
         //Return Video in static position for PDF, dynamic position if HTML
-        if (fileType == 'PDF') {
-            return (
-                <ResponsiveEmbed aspectRatio="16by9">
-                    <embed src={ 'https://www.youtube.com/embed/' + videoUrl }
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen="" />
-                </ResponsiveEmbed>
-            )
-        }
         return (
-            <iframe 
-                id='video'
-                width="425" height="260"
-                src={ 'https://www.youtube.com/embed/' + videoUrl }
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>    
-            </iframe>
+            <div>
+                <div className="ui buttons">
+                    <button className="ui button">Sticky</button>
+                    <button className="ui button">Small</button>
+                    <button className="ui button">Large</button>
+                </div>
+                <iframe 
+                    width="512" height="288"
+                    src={ 'https://www.youtube.com/embed/' + videoUrl }
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen>    
+                </iframe>
+            </div>
         )
     }
 }

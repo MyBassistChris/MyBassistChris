@@ -8,8 +8,9 @@ const Top10Bass = ({ artists, songs}) => {
     })
     return (
         <div className="ui grid centered bg-near-white">
-            <h1>TOP 10 BASS</h1>
             <div className="fourteen wide column">
+                <br />
+                <h1>TOP 10 BASS</h1>
                 <div className="ui fluid vertical menu aligned large">
                     {
                         songs.map((song, i) => {

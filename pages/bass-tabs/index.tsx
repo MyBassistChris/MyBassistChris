@@ -27,6 +27,7 @@ class BassTabs extends Component<{}, bassState> {
         return (
             <div className="ui grid centered bg-near-white">
                 <div className="fourteen wide column">
+                    <br />
                     <h1>ARTISTS</h1>
                         <div className="ui input focus fluid">
                             <input

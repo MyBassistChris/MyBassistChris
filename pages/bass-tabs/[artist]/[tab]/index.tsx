@@ -1,5 +1,4 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
 import fetch from 'isomorphic-unfetch'
 import SongTable from '../../../../components/SongTable/SongTable'
 import PDFTab from '../../../../components/PDFTab/PDFTab'
@@ -26,16 +25,14 @@ const Tab = ({song, artistUrl, filePath}) => {
     }
 
     return (
-        <Container fluid>
-            <br /><br />
+        <div className="ui grid centered">
              <SongTable 
                 song = {song}
                 artistUrl = {artistUrl}
                 fileType = {fileType}
             />
             { tabFile }
-        </Container>
-
+        </div>
     )
 }
 

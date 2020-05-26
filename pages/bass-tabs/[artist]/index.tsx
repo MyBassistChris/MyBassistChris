@@ -8,22 +8,24 @@ const Artist = ({ artistName, artistUrl, songs }) => {
         )
     }
     return (
-        <div className="ui grid centered bg-near-white">
-            <div className="fourteen wide column">
-                <h1> {artistName}</h1>
-                <div className="ui fluid vertical menu aligned large">
-                    {
-                        songs.map((song, i) => {
-                            var songUrl = artistUrl + "/" + song.songUrl
-                            return(
-                                <a className="item" key={i} href={songUrl} >
-                                    {song.songTitle}
-                                </a>
-                            )
-                        })
-                    }
+        <div className="full-height">
+            <div className="ui grid centered bg-near-white full-height">
+                <div className="fourteen wide column padded">
+                    <br />
+                    <h1> {artistName}</h1>
+                    <div className="ui fluid vertical menu aligned large">
+                        {
+                            songs.map((song, i) => {
+                                var songUrl = artistUrl + "/" + song.songUrl
+                                return(
+                                    <a className="item" key={i} href={songUrl} >
+                                        {song.songTitle}
+                                    </a>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
-                <br /><br />
             </div>
         </div>
     )

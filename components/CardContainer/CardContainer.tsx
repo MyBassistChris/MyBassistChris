@@ -1,17 +1,15 @@
-import React from 'react'
-import Row from 'react-bootstrap/Row'
-import Container from 'react-bootstrap/Container'
-import About from '../Cards/About'
+import React, { Fragment } from 'react'
+import AboutCard from '../Cards/AboutCard'
 import ScheduleCard from '../Cards/ScheduleCard'
-import VideoCard from '../Cards/VideoCard'
+import LatestVideoCard from '../Cards/LatestVideoCard'
 
 const CardContainer = () => {
     return (
-        <div className="ui grid stackable centered bg-near-white gray-text">
-                <VideoCard />
-                <ScheduleCard />
-            <About />
-        </div>
+        <Fragment>
+            <LatestVideoCard />
+            <ScheduleCard />
+            <AboutCard />
+        </Fragment>
     )
 }
 

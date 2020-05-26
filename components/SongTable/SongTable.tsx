@@ -1,17 +1,16 @@
-import React from 'react'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Table from 'react-bootstrap/Table'
+import React, { Fragment } from 'react'
 import Video from '../Video/Video'
+import TabVideoCard from '../Cards/TabVideoCard'
 
 //Called in index.js of [tab]
 const SongTable = ({ song, artistUrl, fileType }) => {
     var song2 = song;
     const { songTitle, artist, tuning, videoUrl,  } = song;
     return (
-        <Row>
-            <Col lg={{span: 6, offset: 0}} md={{span: 10, offset: 1}} >
-                <Table>
+        <Fragment>
+            <div className="fourteen wide mobile seven wide computer column">
+                <br />  
+                <table className="ui celled table">
                     <tbody>
                         <tr>
                             <td>Song</td>
@@ -26,16 +25,16 @@ const SongTable = ({ song, artistUrl, fileType }) => {
                             <td>{ tuning }</td>
                         </tr>
                     </tbody>
-                </Table>
-            </Col>
-            <Col lg={{span: 6, offset: 0}} md={{span: 10, offset: 1}} >
-                <Video
-                    className='sticky-top'
+                </table>
+            </div>
+            <div className="fourteen wide mobile seven wide computer column">
+                <br />  
+                <TabVideoCard
                     id='video'
                     videoUrl={ videoUrl }
                     fileType={ fileType } />
-            </Col>
-        </Row>
+            </div>
+        </Fragment>
     )
 }
 
