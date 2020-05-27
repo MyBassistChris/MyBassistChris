@@ -47,7 +47,7 @@ class TabVideoCard extends Component<{}, tabState>  {
     }
 
     render() {
-        const { videoUrl, fileType, width, height, position, positionText, sizeText, float } = this.state;
+        const { videoUrl, fileType, width, height, position, positionText, sizeText } = this.state;
         if(videoUrl.toString().includes('FB')) {
             return (
                  <FacebookPlayer videoId={ videoUrl.slice(3)} />
@@ -61,7 +61,7 @@ class TabVideoCard extends Component<{}, tabState>  {
         else {
             //Return Video in static position for PDF, dynamic position if HTML
             return (
-                <div className="tab-video-container" style={{ position: position, float: float}}>
+                <div className="tab-video-container" style={{ position: position}}>
                     <iframe
                         width={ width } height={ height }
                         src={ 'https://www.youtube.com/embed/' + videoUrl }
