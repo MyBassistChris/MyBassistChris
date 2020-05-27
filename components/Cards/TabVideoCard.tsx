@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component, Fragment, CSSProperties} from 'react'
 import FacebookPlayer from 'react-facebook-player';
 
 interface tabState {
@@ -6,13 +6,15 @@ interface tabState {
     fileType: string
     width: number
     height: number
-    position: string
+    position: CSSProperties
     positionText: string
     sizeText: string
 }
 
 //Called by SongTable
 class TabVideoCard extends Component<{}, tabState>  {
+
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -20,7 +22,7 @@ class TabVideoCard extends Component<{}, tabState>  {
             fileType: props.fileType,
             width: 512,
             height: 288,
-            position: "static",
+            position: {position: "static"},
             positionText: "Sticky",
             sizeText: "Large"
         }
@@ -29,11 +31,14 @@ class TabVideoCard extends Component<{}, tabState>  {
     }
 
     changePosition(e) {
-        if (this.state.position == "static") {
-            this.setState({ position: "fixed", positionText: "Static" })
+        const fixedStyle: CSSProperties = { position: "fixed" };
+        const staticStyle: CSSProperties = { position: "static"}
+
+        if (this.state.positionText == "Sticky") {
+            this.setState({ position: fixedStyle, positionText: "Static" })
         }
         else {
-            this.setState({ position: "static", positionText: "Sticky" })
+            this.setState({ position: staticStyle, positionText: "Sticky" })
         }
     }
 
@@ -61,7 +66,7 @@ class TabVideoCard extends Component<{}, tabState>  {
         else {
             //Return Video in static position for PDF, dynamic position if HTML
             return (
-                <div className="tab-video-container" style={{ position: position}}>
+                <div className="tab-video-container" style={position}>
                     <iframe
                         width={ width } height={ height }
                         src={ 'https://www.youtube.com/embed/' + videoUrl }
