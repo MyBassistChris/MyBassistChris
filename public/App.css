@@ -1,17 +1,20 @@
 /*Import Font & Social Media images*/
-@import url('//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@900&display=swap");
+
+/*
+@import url('//db.onlinewebfonts.com/c/2206d6cc490084998d531e8c1b2cbb4a?family=Druk+Wide+Bold');
+font-family: 'Druk Wide Bold', 'Open Sans', sans-serif;*/
 
 body {
-  font-family: 'Druk Wide Bold', 'Open Sans', sans-serif;
-  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Maven Pro', sans-serif;
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 h1 {
-  font-size: 300% !important;
+  font-size: 400% !important;
   margin: .4em 0;
   font-family: inherit !important;
   font-weight: 700;
@@ -23,6 +26,15 @@ html {
 
 a {
   color: #179b53;
+}
+
+td {
+  font-size: 17px;
+}
+
+/*Prevent menu from overlapping content*/
+#__next {
+  padding-top: 82px;
 }
 
 /* Custom Classes */ 
@@ -41,7 +53,7 @@ a {
 }
 
 .bg-dark {
-  background-color: rgba(55, 55, 55, .9);
+  background-color: rgba(55, 55, 55, .9) !important;
 }
 
 .bg-light {
@@ -61,14 +73,6 @@ a {
   position: relative;
 }
 
-.full-height {
-  height: 100vh;
-}
-
-.grid {
-  min-height: 100%;
-}
-
 .gear-container {
   padding: 0px 40px 50px !important;
 }
@@ -86,8 +90,8 @@ a {
 }
 
 .gearimg {
-  height: 17em;
-  object-fit: contain;
+  max-width:100%;
+  max-height:17em;
 }
 
 .gray-text {
@@ -97,27 +101,24 @@ a {
 .home-card {
   height: 100%;
   width: 100%;
-  border-width: 5px;
-  border-style: solid;
+  background-color: white;
   box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
   padding: 1.25rem;
 }
 
-.home-card:hover {
+/*
+ .home-card:hover {
   background-color: rgba(150, 150, 150, 1);
   color: white;
   transition-duration: 0.4s;
-}
-.home-card:hover a {
-  color: #49ca83;
-}
+} */
 
-.home-row {
-  margin-bottom: 50px;
-}
-
-.navTransparent {
-  background-color: none;
+.home-header {
+  display: block !important;
+  font-family: inherit !important;
+  font-size: 45px;
+  font-weight: 900;
+  margin: 20px 0px;
 }
 
 .react-pdf__Document {
@@ -137,102 +138,60 @@ a {
   margin-left: 20px;
 }
 
+.tc {
+  text-align: center;
+}
+
 .tab-video-container {
   display: block;
   z-Index: 1 !important;
   right: 0;
 }
 
-.thumbnail img {
-  width: 100%;
-  height: 350px;
+.video-responsive iframe {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
 }
-
-.thumbnail {
-  padding: 0;
-}
-
-#video {
-  position: fixed;
-  right: 0;
-}
-
-.hover-square {
-  justify-content: center;
-  border-color: #179b53;
-  border-style: solid;
-  border-width: 2px;
-  outline-offset: 5px;
-  margin: auto;
-}
-
 
 /* Semantic */
 
-.header { /*Card Header */
-  font-size: 26px;
-  font-family: inherit !important;
+a.item:hover {
+  background-color: rgba(221, 221, 221, .7) !important; /* #ddd */
+  color: black !important;
+}
+
+.menu > .item {
+  font-size: 17px;
 }
 
 .ui.menu {
   font-family: inherit;
 }
 
-
-/* Bootstrap */
-
-.card-body {
-  display: inline-block;
+.ui.fixed {
+  padding: 0px 40px;
 }
 
-.card-header {
-  font-size: 26px;
+.ui.fixed.menu a  {
+  color: white !important;
+  font-size: 16px;
 }
 
-.list-group {
-  height: inherit;
+.ui.menu .item>img:not(.ui) {
+  width: 8.5em !important;
 }
 
-.list-group-item {
-  background-color: inherit;
-}
-
-.row > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav {
-  display: inline;
-  margin-right: 40px;
-}
-
-.navbar-brand {
-  background-color: transparent;
-  margin: 5px 0px 5px 20px;
-  padding: 0px !important;
-}
-
-.topnav {
-  background-color: rgba(55, 55, 55, .9); /* #373737 */
-  overflow: hidden;
-  width: 100%;
-}
-
-/* Style the links inside the navigation bar */
-.topnav .btn {
-  color: #f2f2f2;
-  font-size: 14px;
-  text-align: center;
-  padding: 14px 25px;
-  text-decoration: none;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: rgba(221, 221, 221, .7); /* #ddd */
-  color: black;
+.ui.fixed.menu a:hover {
+  background-color: rgba(221, 221, 221, .7) !important; /* #ddd */
+  color: black !important;
   transition-duration: .6s;
+}
+
+.ui.grid {
+  min-height: 90.2vh;
 }
 
 /* Social Media */
@@ -255,53 +214,4 @@ a {
   transform: scale(1.3);
   transition-duration: .6s;
   color: #179b53;
-}
-
-
-/* Mobile */
-@media (max-width: 600px) {
-
-  body {
-    font-size: 12px;
-  }
-
-  .col-md-6 {
-    margin-bottom: 30px;
-  }
-
-  .gearimg {
-    max-height: 200px;
-  }
-
-  .home-section {
-    margin: 30px auto;
-  }
-
-  .navbar-brand {
-    padding: 0px !important;
-    margin: 3px 0px;
-    width: 80px;
-  }
-
-  .row {
-    margin-bottom: 0px;
-  }
-}
-
-@media (max-width: 775px) {
-  .topnav .btn {
-    font-size: 12px;
-    padding: 14px 8px;
-  }
-}
-
-@media (max-width: 992px) {
-
-  .home-row {
-    margin-bottom: 0px;
-  }
-
-  .home-card {
-    margin-bottom: 50px;
-  }
 }

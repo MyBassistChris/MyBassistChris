@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Video from '../Video/Video'
 import TabVideoCard from '../Cards/TabVideoCard'
 
 //Called in index.js of [tab]

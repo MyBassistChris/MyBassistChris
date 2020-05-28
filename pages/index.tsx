@@ -1,12 +1,16 @@
 import React from 'react'
 import Banner from '../components/Banner/Banner'
-import CardContainer from '../components/CardContainer/CardContainer'
+import AboutCard from '../components/Cards/AboutCard'
+import ScheduleCard from '../components/Cards/ScheduleCard'
+import LatestVideoCard from '../components/Cards/LatestVideoCard'
 
 const Home = () => {
     return (
-        <div className="ui grid stackable centered bg-near-white gray-text">
+        <div className="ui grid stackable centered bg-light gray-text">
             <Banner />
-            <CardContainer />
+            <LatestVideoCard />
+            <ScheduleCard />
+            <AboutCard />
         </div>
     )
 }

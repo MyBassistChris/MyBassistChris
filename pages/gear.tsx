@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import GearCard from "../components/Cards/GearCard"
 import fetch from 'isomorphic-unfetch'
+import { GetServerSideProps } from 'next'
 
 const Gear = ({gearArray}) => {
     var currentGear = []
@@ -18,8 +19,8 @@ const Gear = ({gearArray}) => {
     return (
         <Fragment>
             <div className="ui grid stackable stretched equal width bg-near-white gear-container padded">
-                <div className="row">
-                    <h1 className="center">MAIN GEAR</h1>
+                <div className="centered row">
+                    <h1>MAIN GEAR</h1>
                 </div>
                 <br />
                 {
@@ -33,8 +34,8 @@ const Gear = ({gearArray}) => {
                     })
                 }
                 <br />
-                <div className="row">
-                    <h1 className="center">OTHER GEAR</h1>
+                <div className="centered row">
+                    <h1>OTHER GEAR</h1>
                 </div>
                 {
                     otherGear.map((gear, i) => {
@@ -52,8 +53,9 @@ const Gear = ({gearArray}) => {
 }
 
 //Gear.getInitialProps = async () => {
-export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/gear')
+//export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const res = await fetch('https://my-bassist-chris.mybassistchris.now.sh/api/gear')
     const json = await res.json()
     return { props: { gearArray: json } }
 }

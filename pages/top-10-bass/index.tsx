@@ -1,5 +1,4 @@
 import React from 'react'
-import ListGroup from 'react-bootstrap/ListGroup'
 import fetch from 'isomorphic-unfetch'
 
 const Top10Bass = ({ artists, songs}) => {
@@ -7,7 +6,7 @@ const Top10Bass = ({ artists, songs}) => {
         return artist.artist
     })
     return (
-        <div className="ui grid centered bg-near-white">
+        <div className="ui grid centered bg-light">
             <div className="fourteen wide column">
                 <br />
                 <h1>TOP 10 BASS</h1>

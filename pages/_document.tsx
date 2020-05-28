@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Navbar from "../components/Navbar/Navbar"
+import Menu from "../components/Menu/Menu"
 import Footer from "../components/Footer/Footer"
 
 class MyDocument extends Document {
@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         </Head>
         <body>
-          <Navbar />
+          <Menu />
           <Main />
           <Footer />
           <NextScript />

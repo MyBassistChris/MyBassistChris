@@ -25,7 +25,7 @@ class BassTabs extends Component<{}, bassState> {
             return artist.artist.toLowerCase().includes(searchField.toLowerCase());
         })
         return (
-            <div className="ui grid centered bg-near-white">
+            <div className="ui grid centered bg-light">
                 <div className="fourteen wide column">
                     <br />
                     <h1>ARTISTS</h1>
@@ -56,7 +56,7 @@ class BassTabs extends Component<{}, bassState> {
 }
 
 BassTabs.getInitialProps = async () => {
-    const res = await fetch('http://localhost:3000/api/bass-tabs')
+    const res = await fetch('https://my-bassist-chris.mybassistchris.now.sh/api/bass-tabs')
     const json = await res.json()
     return { artists: json }
 }

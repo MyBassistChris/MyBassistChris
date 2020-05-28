@@ -9,7 +9,7 @@ const Artist = ({ artistName, artistUrl, songs }) => {
     }
     return (
         <div className="full-height">
-            <div className="ui grid centered bg-near-white full-height">
+            <div className="ui grid centered bg-light">
                 <div className="fourteen wide column padded">
                     <br />
                     <h1> {artistName}</h1>
@@ -33,11 +33,11 @@ const Artist = ({ artistName, artistUrl, songs }) => {
 
 Artist.getInitialProps = async ({ query }) => {
     var url = query.artist
-    const res = await fetch('http://localhost:3000/api/artist?artist=' + url)
+    const res = await fetch('https://my-bassist-chris.mybassistchris.now.sh/api/artist?artist=' + url)
     try {
         const json = await res.json()
         var name = json.artist
-        const res2 = await fetch('http://localhost:3000/api/songs?artist=' + name.replace('&','%26'))
+        const res2 = await fetch('https://my-bassist-chris.mybassistchris.now.sh/api/songs?artist=' + name.replace('&','%26'))
         const json2 = await res2.json()
         return {artistName: name, artistUrl: url, songs: json2}
     }

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Banner = () => {
     return (
-        <div className="fourteen wide column banner">
-            <img src={"banner.jpg"} alt="My Bassist Chris" />
+        <div className="fourteen wide column">
+            <img className="banner" src={"banner.jpeg"} alt="My Bassist Chris" />
         </div>
     )
 }

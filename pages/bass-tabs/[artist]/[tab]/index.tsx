@@ -20,7 +20,10 @@ const Tab = ({song, artistUrl, filePath}) => {
     }
     else {
         return (
-            <h1 className='tc'>Tab Not Found</h1>
+            <div className="ui grid">
+                <br />
+                <h1 className='center aligned'>Tab Not Found</h1>
+            </div>
         )
     }
 
@@ -41,12 +44,12 @@ Tab.getInitialProps = async ({ query }) => {
     var artistUrl = query.artist
     //Get artist name based on URL
     try {
-        const artistQuery = await fetch('http://localhost:3000/api/artist?artist=' + artistUrl)
+        const artistQuery = await fetch('https://my-bassist-chris.mybassistchris.now.sh/api/artist?artist=' + artistUrl)
         const artistResult = await artistQuery.json()
         var artistName = artistResult.artist
         var urlParams = '?artistName=' + artistName.replace('&','%26') + '&songUrl=' + song
         //Get song info based on artistName & song Url
-        const songQuery = await fetch(`http://localhost:3000/api/tab${urlParams}`)
+        const songQuery = await fetch(`https://my-bassist-chris.mybassistchris.now.sh/api/tab${urlParams}`)
         const songResult = await songQuery.json()
         var filePath = "artists/" + artistUrl + "/" + song + songResult.tabType
         return {song: songResult, artistUrl: artistUrl, filePath: filePath}
