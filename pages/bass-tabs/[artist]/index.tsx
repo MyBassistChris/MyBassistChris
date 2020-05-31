@@ -1,30 +1,40 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import fetch from 'isomorphic-unfetch'
+import Head from 'next/head'
 
 const Artist = ({ artistName, artistUrl, songs }) => {
     if(artistName == '') {
         return (
-            <h1 className='tc'>Artist Not Found</h1>
+            <div className="ui grid centered bg-light">
+                <Head>
+                    <title>Artist Not Found</title>
+                    <meta property="og:title" content="My page title" key="title" />
+                </Head>
+                <br />
+                <h1 className='tc'>Artist Not Found</h1>
+            </div>
         )
     }
     return (
-        <div className="full-height">
-            <div className="ui grid centered bg-light">
-                <div className="fourteen wide column padded">
-                    <br />
-                    <h1> {artistName}</h1>
-                    <div className="ui fluid vertical menu aligned large">
-                        {
-                            songs.map((song, i) => {
-                                var songUrl = artistUrl + "/" + song.songUrl
-                                return(
-                                    <a className="item" key={i} href={songUrl} >
-                                        {song.songTitle}
-                                    </a>
-                                )
-                            })
-                        }
-                    </div>
+        <div className="ui grid centered bg-light">
+            <Head>
+                <title> { artistName }</title>
+                <meta property="og:title" content="My page title" key="title" />
+            </Head>
+            <div className="fourteen wide column padded">
+                <br />
+                <h1> {artistName}</h1>
+                <div className="ui fluid vertical menu aligned large">
+                    {
+                        songs.map((song, i) => {
+                            var songUrl = artistUrl + "/" + song.songUrl
+                            return(
+                                <a className="item" key={i} href={songUrl} >
+                                    {song.songTitle}
+                                </a>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

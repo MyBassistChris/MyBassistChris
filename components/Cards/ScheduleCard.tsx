@@ -2,8 +2,8 @@ import React from 'react'
 
 const ScheduleCard = () => {
     return (
-        <div className="seven wide column">
-            <div className="card home-card schedule-card tc">
+        <div className="seven wide column" data-aos="fade-up">
+            <div className="seven wide column card home-card tc">
                 <div className="content">
                     <div className="header home-header">VIDEO SCHEDULE</div>
                     <br />

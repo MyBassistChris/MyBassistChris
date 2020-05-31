@@ -1,18 +1,46 @@
 import React from 'react'
+import Head from 'next/head'
 import Banner from '../components/Banner/Banner'
 import AboutCard from '../components/Cards/AboutCard'
 import ScheduleCard from '../components/Cards/ScheduleCard'
-import LatestVideoCard from '../components/Cards/LatestVideoCard'
+import LatestVideo from '../components/LatestVideo/LatestVideo'
+import PedalboardCard from '../components/Cards/PedalboardCard'
+import AOS from 'aos';
 
-const Home = () => {
-    return (
-        <div className="ui grid stackable centered bg-light gray-text">
-            <Banner />
-            <LatestVideoCard />
-            <ScheduleCard />
-            <AboutCard />
-        </div>
-    )
+class Home extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    componentDidMount(){
+        //Animate on scroll
+        AOS.init({
+            duration : 700
+        })
+    }
+    
+    render() {
+        return(
+            <div className="ui grid stackable centered bg-light gray-text home-wrapper">
+                <Head>
+                    <title>My Bassist Chris</title>
+                    <meta property="og:title" content="My page title" key="title" />
+                </Head>
+                <Banner />
+                <LatestVideo />
+                <div className="sixteen wide column stagger" />
+                <div className="left-column fourteen wide tablet seven wide computer column">
+                    <ScheduleCard />
+                    <div className="stagger" />
+                    <PedalboardCard />
+                </div>
+                <div className="right-column fourteen wide tablet seven wide computer column">
+                    <div className="stagger" />
+                    <AboutCard />
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Home;

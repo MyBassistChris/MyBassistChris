@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import GearCard from "../components/Cards/GearCard"
 import fetch from 'isomorphic-unfetch'
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 
 const Gear = ({gearArray}) => {
     var currentGear = []
@@ -18,6 +19,10 @@ const Gear = ({gearArray}) => {
     })
     return (
         <Fragment>
+            <Head>
+                <title>Gear</title>
+                <meta property="og:title" content="My page title" key="title" />
+            </Head>
             <div className="ui grid stackable stretched equal width bg-near-white gear-container padded">
                 <div className="centered row">
                     <h1>MAIN GEAR</h1>

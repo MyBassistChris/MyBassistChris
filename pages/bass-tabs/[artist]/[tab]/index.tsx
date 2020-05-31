@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import SongTable from '../../../../components/SongTable/SongTable'
 import PDFTab from '../../../../components/PDFTab/PDFTab'
 import HTMLTab from '../../../../components/HTMLTab/HTMLTab'
+import Head from 'next/head'
 
 const Tab = ({song, artistUrl, filePath}) => {
     let tabFile;
@@ -20,15 +21,23 @@ const Tab = ({song, artistUrl, filePath}) => {
     }
     else {
         return (
-            <div className="ui grid">
+            <div className="ui grid centered bg-light">
+                <Head>
+                    <title>Tab Not Found</title>
+                    <meta property="og:title" content="My page title" key="title" />
+                </Head>
                 <br />
-                <h1 className='center aligned'>Tab Not Found</h1>
+                <h1 className='tc'>Tab Not Found</h1>
             </div>
         )
     }
 
     return (
         <div className="ui grid centered">
+            <Head>
+                <title> {song.songTitle} </title>
+                <meta property="og:title" content="My page title" key="title" />
+            </Head>
              <SongTable 
                 song = {song}
                 artistUrl = {artistUrl}

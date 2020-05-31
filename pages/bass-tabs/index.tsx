@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
+import Head from 'next/head'
 
 interface bassState {
     artists: any[]
@@ -26,6 +27,10 @@ class BassTabs extends Component<{}, bassState> {
         })
         return (
             <div className="ui grid centered bg-light">
+                <Head>
+                    <title>Artists</title>
+                    <meta property="og:title" content="My page title" key="title" />
+                </Head>
                 <div className="fourteen wide column">
                     <br />
                     <h1>ARTISTS</h1>

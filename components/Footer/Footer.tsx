@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-    <footer className="footer">
+    <footer className="footer bg-dark">
         <a href="https://www.youtube.com/c/mybassistchris" target="_blank" rel="noopener noreferrer"  className="fa fa-youtube-play"></a>
         <a href="https://www.instagram.com/mybassistchris" target="_blank" rel="noopener noreferrer"  className="fa fa-instagram"></a>
         <a href="https://www.twitch.tv/mybassistchris" target="_blank" rel="noopener noreferrer"  className="fa fa-twitch"></a>           
