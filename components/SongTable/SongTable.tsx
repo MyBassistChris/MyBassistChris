@@ -9,7 +9,7 @@ const SongTable = ({ song, artistUrl, fileType }) => {
         <Fragment>
             <div className="fourteen wide mobile seven wide computer column">
                 <br />  
-                <table className="ui celled table">
+                <table className="ui celled table unstackable">
                     <tbody>
                         <tr>
                             <td>Song</td>

@@ -32,11 +32,11 @@ class Home extends React.Component {
                 <div className="left-column fourteen wide tablet seven wide computer column">
                     <ScheduleCard />
                     <div className="stagger" />
-                    <PedalboardCard />
+                    <AboutCard />
                 </div>
                 <div className="right-column fourteen wide tablet seven wide computer column">
                     <div className="stagger" />
-                    <AboutCard />
+                    <PedalboardCard />
                 </div>
             </div>
         )
