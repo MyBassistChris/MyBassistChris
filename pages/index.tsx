@@ -17,6 +17,8 @@ class Home extends React.Component {
         AOS.init({
             duration : 700
         })
+        //AOS only works after resizing window for some reason. Refresh is a workaround
+        AOS.refresh();
     }
     
     render() {
