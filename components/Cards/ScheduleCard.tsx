@@ -7,9 +7,9 @@ const ScheduleCard = () => {
                 <div className="header home-header">VIDEO SCHEDULE</div>
                 <br />
                 <div className="ui fluid vertical menu aligned large">
-                    <div className="item">Lekato Tuner Bass Review</div>
-                    <div className="item">Top 10 Bass: The 1975</div>
-                    {/* <a className="item" href='bass-tabs/the-1975/top-10-bass-the-1975'>Top 10 Bass: The 1975</a> */}
+                    <a className="item" href='bass-tabs/the-1975/top-10-bass-the-1975-bass-tab'>Top 10 Bass: The 1975</a>
+                    <div className="item">Top 10 Bass: My Chemical Romance</div>
+                    <div className="item">Top 15 Bass: Green Day</div>
                 </div>
             </div>
         </div>
